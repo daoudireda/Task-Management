@@ -1,27 +1,62 @@
 # TaskManagement
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
+This project was generated with Angular CLI version 18.2.4.
 
-## Development server
+##  Overview
+TaskManagement is a full-stack application designed to manage tasks. It has both frontend and backend components, with data stored in a JSON file for simplicity. The frontend is built using Angular, while the backend uses Node.js with Express to handle HTTP requests and manage tasks.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+##  Technologies Used
+###  Frontend:
+- Angular: The project uses Angular for building the user interface. It leverages Angular services and HTTPClient for communication with the backend.
+###  Backend:
+- Node.js & Express: The backend is built using Node.js with the Express framework. It handles CRUD operations (Create, Read, Update, Delete) for tasks via HTTP requests.
+- JSON File: Instead of using a database, this project uses a JSON file (tasks.json) to store task data. The backend reads from and writes to this file for persistence.
 
-## Code scaffolding
+##  Features
+- Add, delete, and update tasks.
+- Display tasks stored in the JSON file.
+- Communicates between the frontend and backend using HTTP requests.
+- Fully operational local development environment with live reloading on the frontend.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### How to Run the Project
+##  Frontend:
+- Install dependencies for the Angular app:
+```bash npm install```
+Run the Angular development server:
+```bash ng serve```
+- Navigate to http://localhost:4200/. The application will automatically reload if you make changes to any of the source files.
 
-## Build
+## Backend:
+1. Navigate to the /backend folder:
+``` bash cd backend ```
+2. Install backend dependencies:
+```  bash npm install ```
+3. Start the Express server:
+``` bash 'node server.js' ```
+This will start the backend server on http://localhost:3000/.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Development
+- The Angular frontend communicates with the backend via HTTP requests using Angular's HttpClient service.
+- The backend serves the API routes using Express to handle requests and read/write from the tasks.json file.
+- Any changes to the backend or frontend code will automatically be reflected when the development servers are running.
 
-## Running unit tests
+## Backend API Endpoints
+### POST /task
+- Adds a new task to the tasks.json file.
+### GET /tasks
+- Retrieves all tasks from the tasks.json file.
+### DELETE /task/:id
+- Deletes a task with the specified ID from the tasks.json file.
+### PUT /task/:id
+- Updates the task with the specified ID.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### File Structure
+- /src/app: Contains all Angular components, services, and modules.
+- /backend: Contains the Express server and the tasks.json file for backend operations.
+- /tasks.json: A JSON file that stores task data persistently.
 
-## Running end-to-end tests
+### Future Enhancements
+- Move to a real database (e.g., MongoDB or PostgreSQL) instead of using a JSON file.
+- Add user authentication and task assignment based on users.
+- Implement task prioritization and filtering.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
